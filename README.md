@@ -6,6 +6,15 @@ This is a more complicated version of the Basic Heroku Flask App lesson: [https:
 
 See this app in action: https://peaceful-sierra-25803.herokuapp.com/
 
+Or, see the screenshot:
+
+
+![image screenshot-site.jpg](readme_assets/images/screenshot-site.jpg)
+
+
+
+# About the data
+
 
 
 Earthquake data comes from the USGS: http://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php
