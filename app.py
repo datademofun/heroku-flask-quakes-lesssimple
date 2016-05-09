@@ -1,15 +1,8 @@
 from flask import Flask, render_template
 from datetime import datetime
-from urllib.request import urlretrieve
-from urllib.parse import quote
+from urllib.parse import urlencode
 import csv
 import requests
-
-qstr = quote("Stanford University")
-thing = urlretrieve("https://www.duckduckgo.com/?q=" + qstr)
-
-from urllib.parse import urlencode
-
 
 GMAPS_URL = 'https://maps.googleapis.com/maps/api/staticmap?'
 USGS_FEED_URL = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.csv'
@@ -27,7 +20,6 @@ def get_quake_data():
 
 def prepare_static_gmap_url(locations, widthheight='400x300', zoom='None'):
     # This just returns a URL string, it doesn't get the URL via requests
-
     mydict = {'size': widthheight, 'maptype': 'hybrid', 'zoom': zoom}
     if type(locations) is list:
         mydict['markers'] = locations
