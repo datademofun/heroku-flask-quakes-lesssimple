@@ -1,0 +1,54 @@
+body{
+
+}
+
+
+#world-map img{
+  width: 100%;
+}
+
+table.earthquakes tr td{
+  vertical-align: middle;
+}
+
+
+
+td.time{
+  font-size: 1.8em;
+}
+
+td.magnitude{
+  text-align: center;
+  font-size: 4.0em;
+  font-weight: bold;
+}
+
+.sec{
+  margin-bottom: 2.4em;
+}
+
+#woz-content{
+  min-height: 300px;
+}
+
+
+header#woz-header{
+  margin-bottom: 2.0em;
+  text-align:center;
+  background: #333;
+  color: white;
+}
+
+header#woz-header h1{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+}
+
+
+
+footer#woz-footer{
+  margin-top: 2.0em;
+  padding: 1.5em 0;
+  min-height: 200px;
+}

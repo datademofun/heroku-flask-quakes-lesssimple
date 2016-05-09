@@ -1,0 +1,47 @@
+
+{% include 'partials/head.html' %}
+
+
+<section id="woz-content">
+  <div class="container">
+    <h1 class="page-title">Latest Major Earthquakes Worldwide</h1>
+
+    <p>According to the [USGS Earthquake Feeds](http://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php), there have been <strong>{{quakes | length }}</strong> major earthquakes in the past <strong>30 days since {{time}}</strong>
+    </p>
+
+    <p>See raw CSV: <a href="http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.csv">http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.csv</a></p>
+
+
+    <div id="world-map">
+      <img src="{{world_map_url}}" alt="google map">
+    </div>
+
+
+
+    <table class="table table-condensed table-striped table-bordered earthquakes">
+      <thead>
+        <tr>
+          <th>Place</th>
+          <th>Time</th>
+          <th>Magnitude</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for quake in quakes %}
+        <tr class="location">
+          <td>
+            <a href="http://earthquake.usgs.gov/earthquakes/eventpage/{{ quake.id }}">
+              <p>{{ quake.place }}</p>
+              <img src="{{quake.gmap_url}}">
+            </a>
+          </td>
+          <td class="time">{{ quake.time }}</td>
+          <td class="magnitude">{{ quake.mag }}</td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+</section>
+
+{% include 'partials/foot.html' %}
